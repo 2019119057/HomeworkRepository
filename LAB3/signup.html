@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>Sign up</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+	<h1>Welcome to Internet-Programming Shop</h1>
+    <hr>
+        <label><a href="login.html">로그인</a></label>
+        <label><a href="signup.html">회원가입</a></label>
+        <label><a href="index.html">메인</a></label>
+<hr >
+
+	<form  method="get">
+        <label>개인정보 &lt;필수&gt;</label>
+        <br>
+
+		<label>이름 <input type="text" name="name" placeholder="이름을 입력하세요" autofocus></label>
+        <br>
+       
+        <label>성별</label> <label>남성 <input type="radio" id="gender" name="gender" value="male" required></label>
+        
+        <label>여성<input type="radio" id="gender" name="gender" value="female" required></label>
+        
+        <br>
+        
+        <label>생일 <input type="date" name="date" ></label>
+        <br>
+        
+        <label>학년 <input type="number" name="age" min="1" max="5" step="1" placeholder="1"></label>
+        <br>
+
+        <label>휴대폰 <input type="tel" name="phone" autocomplete="on" required></label>
+        <br>
+        
+        
+        <label>이메일(아이디) <input type="email" name="email"  autocomplete="on" placeholder = "name@domain.com" required></label>
+        <br>
+
+        <label>비밀번호 <input type="password" name="password" required></label>
+        <br>
+        <label>비밀번호 확인 <input type="password" name="password" required></label>
+        <br>
+
+        <label>개인 정보 수집에 동의합니다.<input type="checkbox" name="infromAgree" required></label>
+        <br>
+
+        <button id ="login" type="submit">로그인</button>  <button id="back" onclick="history.back()">뒤로가기</button>
+        
+	</form>
+    <hr>
+	
+</body>
+</html>

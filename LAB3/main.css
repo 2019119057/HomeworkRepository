@@ -1,0 +1,224 @@
+div.info {max-width:1020px;
+    margin: auto;}
+
+@media screen and (max-width: 480px){
+    nav.container {
+        display: flex;
+        font-size: 2em;
+        margin: auto;
+        flex-direction: column;
+        flex-wrap : wrap;
+        justify-content : start;
+      }
+      .main_container{
+        border: 1px;
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+        padding: 1px;
+    
+        justify-content : center;
+    }
+    .flex_container{
+        display: flex;
+        padding: 1px;
+        border: solid black;
+        flex-direction: column;
+    }
+    
+    .vertical_container{
+        flex-direction: row;
+        flex-wrap : wrap;
+        justify-content : start;
+        margin : auto;
+        padding: auto;
+        padding: 1px;
+        border: solid black;
+        min-height: 200px;
+    
+    }
+
+}
+@media screen and (min-width: 481px)and (max-width : 800px){
+    nav.container {
+        display: flex;
+        font-size: 2em;
+        margin: auto;
+        flex-direction: column;
+        flex-wrap : wrap;
+        justify-content : start;
+      }
+      .main_container{
+        border: 1px;
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+        padding: 1px;
+    
+        justify-content : center;
+    }
+    .flex_container{
+        display: flex;
+        padding: 1px;
+        border: solid black;
+        flex-wrap : wrap;
+        
+    }
+    
+    .vertical_container{
+        flex-direction: row;
+        flex-wrap : wrap;
+        justify-content : start;
+        margin : auto;
+        padding: auto;
+        padding: 1px;
+        border: solid black;
+        min-height: 200px;
+        min-width: 250px;
+ 
+    
+    }
+
+}
+@media screen and (min-width : 801px){
+    nav.container {
+        display: flex;
+        font-size: 2em;
+        margin: auto;
+        flex-direction: row;
+        flex-wrap : wrap;
+        justify-content : start;
+      }
+      .main_container{
+        border: 1px;
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+        padding: 1px;
+    
+        justify-content : center;
+    }
+    .flex_container{
+        display: flex;
+        padding: 1px;
+        border: solid black;
+    }
+    
+    .vertical_container{
+        flex-direction: row;
+        flex-wrap : wrap;
+        justify-content : start;
+        margin : auto;
+        padding: auto;
+        padding: 1px;
+        border: solid black;
+        min-height: 200px;
+    
+    }
+
+};
+
+.fContainer{
+    display: flex;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+
+#lineBox{
+    height: 5px;
+    background-color: purple;
+}
+
+
+
+img {
+
+    max-width: 100px;
+    max-height: 100px;
+    position: relative;
+    object-fit:cover
+
+}
+img:hover.bigger {
+    position: sticky;
+    transition: all 2s;
+    transform: scale(2);
+
+}
+
+.pName{
+    position: absolute;
+    background-color: purple;
+    color: white;
+    font-size: 2em;
+    z-index: 1;
+    display: none;
+
+
+}
+
+img:hover + .pName {
+    display: inline-block;
+}
+
+
+#movTxt{
+    position: relative;
+    animation-name: movingTxt;
+	animation-duration: 2s;
+	animation-direction: normal;
+	animation-timing-function: linear;
+    text-align: left;
+    width: 560px;
+}
+
+
+@keyframes movingTxt
+{
+    0% { margin-left: 100%; margin-right: -50%;}
+    100% {margin-left: 0%; margin-right: 50%;}
+}
+
+input{
+	width: 30%;
+    height : 20px;
+	margin: 10px 0;
+	padding: 12px 20px;
+	border: 1px solid black;
+    text-align : center ; 
+
+}
+
+label #gender {
+    width : 5%
+}
+
+input:hover{
+
+    background-color : rgb(207, 238, 207) ;
+    font-size : larger;
+    font-family :'Times New Roman', Times, serif;
+    color : rgb(88, 53, 243);
+    border: 2px solid black;
+
+}
+
+h1{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+#login {
+    margin: 10px 0;
+    background-color : rgb(0, 247, 0) ;
+    width: 10%;
+    height : 30px;
+}
+#back{
+    margin: 10px 0;
+    background-color : rgb(224, 64, 52) ;
+    width: 10%;
+    height : 30px;
+}
