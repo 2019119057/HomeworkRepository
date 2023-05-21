@@ -50,7 +50,7 @@ let products = [];
 let currentIndex = 0;
 const itemsPerPage = 6;
 
-fetch('products.json')
+fetch('product.json')
     .then(response => response.json())
     .then(data => {
         products = data.books;
