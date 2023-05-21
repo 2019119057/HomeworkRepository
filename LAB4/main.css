@@ -1,0 +1,154 @@
+div.info {max-width:1020px;
+    margin: auto;}
+
+@media screen and (max-width: 480px){
+
+}
+@media screen and (min-width: 481px)and (max-width : 800px){
+
+
+}
+@media screen and (min-width : 801px){
+
+};
+
+.fContainer{
+    display: flex;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+#lineBox{
+    height: 1px;
+    background-color: black;
+}
+
+#productImg{
+    width: 300px;
+    height: 400px;
+    display: inline-block;
+
+    margin-right: 50px;
+    margin-bottom: 50px;
+}
+
+
+nav.container {
+    display: flex;
+    font-size: 1.2em;
+    margin: auto;
+    flex-direction: row;
+    flex-wrap : wrap;
+    justify-content : start;
+  }
+
+.sortContainer{
+    float: left;
+    display: inline-block;
+    margin: 0;
+
+}
+
+.sortContainer select {
+    margin-top :0;    
+    margin-bottom: 0; 
+    width: 200px;
+}
+
+.sortContainer p {
+    margin-top :0;    
+    margin-bottom: 0;
+  }
+
+
+.sortContainer input{
+    margin-top :0;    
+    margin-bottom: 0; 
+
+    width: 190px;
+}
+
+.itemContainer{
+    margin: 0; 
+    margin-left: 0;
+    display: inline-block;
+    width: 800px;
+}
+.product-div{
+    display: inline-block;
+}
+.info-div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 280px;
+    height: 380px;
+    padding: 10px;
+    text-align: center;
+}
+    
+
+.itemContainer > div {
+        position: relative;
+    }
+
+.pName{
+    position: absolute;
+    background-color: purple;
+    color: white;
+    font-size: 2em;
+    z-index: 1;
+    display: none;
+
+
+}
+
+img:hover + .pName {
+    display: inline-block;
+}
+
+
+#movTxt{
+    position: relative;
+    animation-name: movingTxt;
+	animation-duration: 2s;
+	animation-direction: normal;
+	animation-timing-function: linear;
+    text-align: left;
+    width: 560px;
+}
+
+
+@keyframes movingTxt
+{
+    0% { margin-left: 100%; margin-right: -50%;}
+    100% {margin-left: 0%; margin-right: 50%;}
+}
+
+
+label #gender {
+    width : 5%
+}
+
+
+h1{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+#login {
+    margin: 10px 0;
+    background-color : rgb(0, 247, 0) ;
+    width: 10%;
+    height : 30px;
+}
+#back{
+    margin: 10px 0;
+    background-color : rgb(224, 64, 52) ;
+    width: 10%;
+    height : 30px;
+}

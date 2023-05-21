@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+
+<body>
+    <div class="info">
+        
+        <header id="movTxt"><h2>Welcome to Internet Programming shop.</h2></header>
+<div id="lineBox"></div>
+        <nav class="container">
+            <label><a href="login.html">로그인&nbsp</a></label>
+            <label><a href="signup.html">회원가입&nbsp</a></label>
+            <label><a href="index.html">메인&nbsp</a></label>
+        </nav>
+        <div id="lineBox"></div>
+
+        <H3>Products</H3>
+        <div id="lineBox"></div>
+
+        <div class="sortContainer">
+
+            <p>Choose a catagory :</p>
+            <select id="catagory">
+                <option value="all">ALL</option>
+                <option value="HTML">HTML</option>
+                <option value="JAVA">JAVA</option>
+                <option value="CSS">CSS</option>
+                <option value="Xml">XML</option>
+            </select>
+            <p>Enter Search Term :<p>
+            <input type="text" id="keyWord" name="keyWord">
+            <p>Choose a sort : <p>
+            <select id="sorting">
+                <option value="noSort">None</option>
+                <option value="upSort">up</option>
+            </select>
+            <br>
+            <button id="filterSearch">Filter Search</button>
+        </div> 
+ 
+        <div class="itemContainer">        <div id="productDetail"></div>  </div>
+        
+    </div>
+</body>
+
+<head>
+    <title>E-commerce Main</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script>
+let products = [];
+let currentIndex = 0;
+const itemsPerPage = 6;
+
+fetch('products.json')
+    .then(response => response.json())
+    .then(data => {
+        products = data.books;
+        filteredProducts = products;
+        loadImages(filteredProducts);
+    })
+    .catch(error => console.error(error));
+
+function loadImages(productList) {
+    var itemContainer = document.getElementsByClassName('itemContainer')[0];
+    var productsToLoad = productList.slice(currentIndex, currentIndex + itemsPerPage);
+    currentIndex += itemsPerPage;
+    productsToLoad.forEach(function(product) {
+        var productDiv = document.createElement('div');
+        productDiv.classList.add('product-div');
+        productDiv.innerHTML = "<img id=\"productImg\" src='" + product.image + "'>";
+        productDiv.addEventListener('click', function() {
+            const infoDiv = document.createElement('div');
+            infoDiv.classList.add('info-div');
+            infoDiv.innerText = `${product.name}   ${product.price}$ \n\n\n This book is for ${product.category}`;
+            event.target.parentElement.appendChild(infoDiv);
+        });
+        itemContainer.appendChild(productDiv);
+    });
+}
+
+document.getElementById('filterSearch').addEventListener('click', function() {
+    var keyword = document.getElementById('keyWord').value;
+    var category = document.getElementById('catagory').value;
+    var isSorted = document.getElementById('sorting').value;
+
+    // Clear the item container
+    if(isSorted=="noSort"){
+        document.getElementsByClassName('itemContainer')[0].innerHTML = "";
+
+        filteredProducts = products.filter(function(product) {
+            var keywordCondition = keyword ? product.name.toLowerCase().includes(keyword.toLowerCase()) : true;
+            var categoryCondition = category !== "all" ? product.category.includes(category) : true;
+            return keywordCondition && categoryCondition;
+        });
+
+        currentIndex = 0;
+        loadImages(filteredProducts);
+    }
+    if(isSorted=="upSort") {
+        document.getElementsByClassName('itemContainer')[0].innerHTML = "";
+        currentIndex = 0;
+        var sortingProducts = products.filter(function(product) {
+            var keywordCondition = keyword ? product.name.toLowerCase().includes(keyword.toLowerCase()) : true;
+            var categoryCondition = category !== "all" ? product.category.includes(category) : true;
+            return keywordCondition && categoryCondition;
+        });
+        filteredProducts= sortingProducts.sort( function (a,b){
+            return a.price - b.price
+        });
+        
+        loadImages(filteredProducts);
+    }
+
+
+});
+
+window.onscroll = () => {
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 500) {
+        loadImages(filteredProducts);
+    }
+};
+
+    </script>
+   
+</head>
